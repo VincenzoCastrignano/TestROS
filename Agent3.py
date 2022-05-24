@@ -1,7 +1,7 @@
-class Agent2:
-    def __init__(self, _hedonist_table):
+class Agent3:
+    def __init__(self, valence_table):
         """ Creating our agent """
-        self.hedonist_table = _hedonist_table
+        self.valence_table = valence_table
         self._action = None
         self.anticipated_outcome = None
         self.cycle = 0
@@ -11,6 +11,7 @@ class Agent2:
         self.etat = "Content"
 
     def action(self, outcome):
+        print(self.valence_table[self._action][outcome])
         """ tracing the previous cycle """
         if self._action is not None:
             print("Action: " + str(self._action) +
@@ -18,19 +19,19 @@ class Agent2:
                   ", Outcome: " + str(outcome) +
                   ", Satisfaction: (anticipation: " + str(self.anticipated_outcome == outcome) +
                   ", Etat: " + str(self.etat) + ")" +
-                  ", valence: " + str(self.hedonist_table[self._action][outcome]) + ")" +
+                  ", valence: " + str(self.valence_table[self._action][outcome]) + ")" +
                   " (deuxième valeur précédente : " + str(self.data_oc) +
                   ", valeur précédente : " + str(self.data_oc2) + ")")
 
         """ Computing the next action to enact """
         # TODO: Implement the agent's decision mechanism
+        # print("valence : " + str(self.valence_table[self._action][outcome]))
         if self._action == 0:
             self.data_oc = outcome
             self._action = 1
         else:
             self.data_oc2 = outcome
             self._action = 0
-
 
         if self._action == 0:
             self.anticipated_outcome = self.data_oc

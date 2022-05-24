@@ -3,8 +3,10 @@
 # This code is used to teach Developmental AI.
 # from turtlesim_enacter import TurtleSimEnacter # requires ROS
 from turtlepy_enacter import TurtlePyEnacter
-from Agent5 import Agent5
-from OsoyooCarEnacter import OsoyooCarEnacter
+from Agent2 import Agent2
+from Agent3 import Agent3
+
+# from OsoyooCarEnacter import OsoyooCarEnacter
 ROBOT_IP = "192.168.4.1"
 
 
@@ -99,10 +101,10 @@ class Environment4:
 valences = [[-1, 1], [-1, 1]]
 # valences = [[1, -1], [1, -1]]
 # TODO Choose an agent
-a = Agent(valences)
-# a = Agent5(valences)
+# a = Agent(valences)
+a = Agent3(valences)
 # TODO Choose an environment
-e = Environment1()
+e = Environment3()
 # e = Environment2()
 # e = Environment3()
 # e = TurtleSimEnacter()
