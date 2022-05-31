@@ -4,7 +4,8 @@
 # from turtlesim_enacter import TurtleSimEnacter # requires ROS
 from turtlepy_enacter import TurtlePyEnacter
 from Agent2 import Agent2
-from Agent3 import *
+from Agent3 import Agent3
+from Agent4 import Agent4
 
 # from OsoyooCarEnacter import OsoyooCarEnacter
 ROBOT_IP = "192.168.4.1"
@@ -104,16 +105,16 @@ valences = [[-1, 1], [-1, 1]]
 # a = Agent(valences)
 a = Agent3(valences)
 # TODO Choose an environment
-e = Environment2()
+e = Environment1()
 # e = Environment2()
 # e = Environment3()
 # e = TurtleSimEnacter()
-# e = TurtlePyEnacter()
+e = TurtlePyEnacter()
 # e = OsoyooCarEnacter(ROBOT_IP)
 
 if __name__ == '__main__':
     """ The main loop controlling the interaction of the agent with the environment """
     outcome = 0
-    for i in range(10):
+    for i in range(15):
         action = a.action(outcome)
         outcome = e.outcome(action)
