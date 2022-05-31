@@ -4,7 +4,7 @@
 # from turtlesim_enacter import TurtleSimEnacter # requires ROS
 from turtlepy_enacter import TurtlePyEnacter
 from Agent2 import Agent2
-from Agent3 import Agent3
+from Agent3 import *
 
 # from OsoyooCarEnacter import OsoyooCarEnacter
 ROBOT_IP = "192.168.4.1"
@@ -104,7 +104,7 @@ valences = [[-1, 1], [-1, 1]]
 # a = Agent(valences)
 a = Agent3(valences)
 # TODO Choose an environment
-e = Environment3()
+e = Environment1()
 # e = Environment2()
 # e = Environment3()
 # e = TurtleSimEnacter()
