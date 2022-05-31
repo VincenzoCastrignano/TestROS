@@ -114,6 +114,6 @@ e = Environment1()
 if __name__ == '__main__':
     """ The main loop controlling the interaction of the agent with the environment """
     outcome = 0
-    for i in range(20):
+    for i in range(10):
         action = a.action(outcome)
         outcome = e.outcome(action)
