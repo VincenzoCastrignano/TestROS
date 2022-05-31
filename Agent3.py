@@ -42,4 +42,5 @@ class Agent3:
                 self._action = 1
                 self.anticipated_outcome = self.outcome_for_action1
 
+
         return self._action

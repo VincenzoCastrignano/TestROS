@@ -104,7 +104,7 @@ valences = [[-1, 1], [-1, 1]]
 # a = Agent(valences)
 a = Agent3(valences)
 # TODO Choose an environment
-e = Environment1()
+e = Environment2()
 # e = Environment2()
 # e = Environment3()
 # e = TurtleSimEnacter()
