@@ -2,13 +2,15 @@
 # Olivier Georgeon, 2021.
 # This code is used to teach Developmental AI.
 # from turtlesim_enacter import TurtleSimEnacter # requires ROS
+import random
+
 from turtlepy_enacter import TurtlePyEnacter
 from Agent2 import Agent2
 from Agent3 import Agent3
 from Agent4 import Agent4
 
-# from OsoyooCarEnacter import OsoyooCarEnacter
-ROBOT_IP = "192.168.4.1"
+from OsoyooCarEnacter import OsoyooCarEnacter
+ROBOT_IP = "10.40.20.250"
 
 
 class Agent:
@@ -99,22 +101,22 @@ class Environment4:
         return random.randint(0, 1)
 
 # TODO Define the valance of interactions (action, outcome)
-valences = [[-1, 1], [-1, 1]]
-# valences = [[1, -1], [1, -1]]
+# valences = [[-1, 1], [-1, 1], [-1, 1]]
+valences = [[1, -1], [1, -1], [1, -1]]
 # TODO Choose an agent
 # a = Agent(valences)
-a = Agent3(valences)
+a = Agent4(valences)
 # TODO Choose an environment
-e = Environment1()
+# e = Environment1()
 # e = Environment2()
 # e = Environment3()
 # e = TurtleSimEnacter()
-e = TurtlePyEnacter()
-# e = OsoyooCarEnacter(ROBOT_IP)
+# e = TurtlePyEnacter()
+e = OsoyooCarEnacter(ROBOT_IP)
 
 if __name__ == '__main__':
     """ The main loop controlling the interaction of the agent with the environment """
     outcome = 0
-    for i in range(15):
+    for i in range(75):
         action = a.action(outcome)
         outcome = e.outcome(action)

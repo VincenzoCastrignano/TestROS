@@ -1,12 +1,19 @@
 # README of the Developmental AI for ROS project
+(Aucun de ces programmes ne comportent la notion d'ennuie)
 
-This repository provides code for practicing developmental AI in the [ROS](https://www.ros.org/) environment.
+## Première capture d'écran
+Pour commencer ,le robot a "par défaut" l'action 0, donc il avance.
+Par la suite, on regarde la valence obtenue par cette action.
 
-world.py provides the general framework for implementing a developmental agent and testing it in rudimentary environments. 
-It is a standalone file that can run in any python environment.
+Si la valence est négative, alors l'action du robot va changer pour une nouvelle action.
 
-turtlesim_enacter.py provides the interface between a developmental agent and the [turtlesim simulator](http://wiki.ros.org/turtlesim). 
-It requires a ROS installation. 
+Si il avance, alors il ira a droite, si il va a droite, alors il ira a gauche et si il
+va a gauche, il ira a droite (ce qui explique les zigzags).
 
-See the [wiki](https://github.com/OlivierGeorgeon/TestROS/wiki) to learn how to use it (French).
+Lorsqu'il percute un mur, alors le robot ira sur la gauche jusqu'au moment où il s'échappe.
 
+## Deuxième capture d'écran
+Il s'agit de la même procédure sauf que la table de valence est l'exact opposé a
+celle de la première capture, alors il ira toujours devant sauf quand il rencontre
+un obstacle, il va soit à droite soit à gauche pour obtenir une valence positive en allant
+tout droit.
